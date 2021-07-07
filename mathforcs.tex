@@ -1,0 +1,118 @@
+\documentclass[10pt]{memoir}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+%\usepackage[tight]{diagrams}
+\usepackage{MnSymbol}
+\usepackage[mathlf,textlf,minionint]{MinionPro}
+\DeclareMathSymbol{\mycomplement}   {\mathord}{AMSa}{"7B}
+%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+\usepackage{calc,url}
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{lecmath,lecmemoir,lecpagesize}
+\theoremstyle{mybem}
+\usepackage{exercise}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, unicode=true, linkcolor=[rgb]{0.10,0.05,0.67}, citecolor=[rgb]{0.10,0.05,0.67}, filecolor=[rgb]{0.10,0.05,0.67}, urlcolor=[rgb]{0.10,0.05,0.67}}
+\usepackage[pdftex]{accsupp}
+%\usepackage{accessibility}
+%\usepackage[accsupp]{axessibility}
+
+\let\cal=\mathcal
+\def\qed{\hfill{$\square$}}
+
+\def\mynote#1{\footnote{#1}}
+\def\person#1{#1}
+\def\figuref#1{Figure~\ref{#1}}
+\def\pointer#1{{\color{blue}\underline{$\leadsto$~\ref{#1%
+}}}}
+\def\bonussection{\begin{center}\textbf{BONUSSECTION}\end{center}}
+
+\makeindex
+\title{Mathematics for Computational Science}
+\author{Alexander Hulpke}
+\date{Spring 2021}
+\begin{document}
+\chapterstyle{BlueBox}%bianchi}
+\frontmatter
+\thispagestyle{empty}
+%\maketitle
+\ \\
+\vspace{1mm}
+\begin{center}
+{\huge\textbf{\thetitle}}
+\bigskip
+
+{\large Lecture Notes}
+\bigskip
+
+{\small MATH 180A5}
+\bigskip
+\bigskip
+
+{\Large\theauthor}
+\medskip
+
+{\large\thedate}
+\end{center}
+
+\ \hspace{8cm}
+\vspace{2mm}
+\begin{center}
+\includegraphics[width=11cm]{pic/Kandinsi_CirclesInACircle.jpg}
+\end{center}
+\vspace{1cm}
+\vfill
+
+\hfill Version of \today
+\newpage
+\thispagestyle{empty}
+\begin{raggedright}
+{\small
+Alexander Hulpke\\
+Department of Mathematics\\
+Colorado State University\\
+1874 Campus Delivery\\
+Fort Collins, CO, 80523
+}
+\end{raggedright}
+\vfill
+\setlength\epigraphwidth{4cm}
+\begin{epigraphs}
+\qitem{%
+\textit{Title graphics:}\\
+}
+{Circles in a Circle (1923)}
+\textsc{Wassily Kandinsky}
+\end{epigraphs}
+\vspace{1cm}
+\begin{raggedright}
+{\small
+These notes are accompanying my course MATH 180,
+held Spring 2021 at Colorado State University.
+\bigskip
+
+\copyright 2021 Alexander Hulpke. Copying for personal use is permitted.
+}
+\end{raggedright}
+\newpage
+%\setlength{\cftpartnumwidth}{1.5em}
+\setlength{\cftchapternumwidth}{2em}
+\setlength{\cftsectionnumwidth}{2.5em}
+\setlength{\cftsubsectionindent}{4em}
+\tableofcontents
+%\input{preface}
+\mainmatter
+\input{chsets.tex}
+\input{chrels.tex}
+\input{chfuns.tex}
+\input{chseqs.tex}
+\input{chdiff.tex}
+\input{chappdiff.tex}
+\input{chtaylor.tex}
+\input{chanti.tex}
+%\input{chinteg.tex}
+\printindex
+\end{document}

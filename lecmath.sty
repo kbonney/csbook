@@ -1,0 +1,129 @@
+% spezielle Befehle
+
+\newcommand\calb{{\cal B}}
+\newcommand\calc{{\cal C}}
+\newcommand\calg{{\cal G}}
+\newcommand\calr{{\cal R}}
+\newcommand\Q{{\mathbb Q}}
+\newcommand\C{{\mathbb C}}
+\newcommand\N{{\mathbb N}}
+\newcommand\F{{\mathbb F}}
+\newcommand\Z{{\mathbb Z}}
+\newcommand\R{{\mathbb R}}
+\newcommand\Beta{{\rm B}}
+\newcommand\cws{W}
+\newcommand\GAP{\textsf{GAP}}
+\let\vphi=\varphi
+\let\vrho=\varrho
+\let\nt=\vartriangleleft
+\newcommand\vbig{\vphantom{{\int_1^1}}}
+\DeclareMathOperator{\Soc}{Soc}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\PG}{PG}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GF}{GF}
+\def\ker{\mathop{\mbox{Kern}}}
+\DeclareMathOperator{\wt}{wt}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diag}{Diag}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+\DeclareMathOperator{\cgs}{CGS}
+\def\starto{{\buildrel {*}\over{\to}}}
+\newcommand\idgrp{\gen{1}}
+\newcommand\divs{\bigm|}
+\newcommand\ndivs{\nmid}
+\newcommand\grupord{\preceq}
+\newcommand\disunion{\uplus}
+\newcommand\bigdisunion{\mathop{\text{\Large$\uplus$}}}
+\newcommand\epito{\hbox{$\to\!\!\!\!\to$}}
+\def\hidot{{}^\cdot}
+
+\newcommand\formulalabel[1]{{}^{\fbox{\mbox{#1}}}\quad\displaystyle}
+\newcommand\dopbinom[2]{\left({#1\choose #2}\right)}
+
+\newcommand\rest[1]{|_{#1}}
+\newcommand\gen[1]{\left\langle#1\right\rangle}
+\newcommand\sz[1]{\left|#1\right|}
+\newcommand\za[1]{{\it#1}}
+\newcommand\zb[1]{{\bf#1}}
+\newcommand\vari[1]{\mbox{\textit{#1}}}
+\newcommand\fct[1]{\mbox{\textsc{#1}}}
+\newcommand\gesy[1]{\underline{\mbox{\boldmath $#1$}}}
+\newcommand\mvec[1]{{\boldmath #1}}
+\newcommand\comp[1]{.\texttt{#1}}
+\newcommand\Oof[1]{{\cal O\/}(#1)}
+\newcommand\ddt[1]{\frac{\mbox{d}}{\mbox{d$#1$}}}
+
+\newcommand\OEIS[1]{\framebox{OEIS #1}}
+
+% redefine cite to non-bold
+\def\@cite#1#2{{%
+ \m@th\upshape\mdseries[{\rmfamily #1}{\if@tempswa, #2\fi}]}}
+% was: \m@th\upshape\mdseries[{\bfseries #1}{\if@tempswa, #2\fi}]}}
+
+\newcommand\komop[2]{\quad{\buildrel #1 \over #2}\quad}
+\newcommand\dirpow[2]{#1^{\times#2}}
+\newcommand\dogpind[1]{\left[\vphantom{\hbox{${#1}'$}}#1\right]}
+\newcommand\gpind[2]{\dogpind{#1{:}#2}}
+\newcommand\gpcomm[2]{\dogpind{#1,#2}}
+\newcommand{\rnk}[2]{\lower 0.2ex\hbox{$#1$}\kern -.1em{\setminus}
+                     \kern -.1em\raise 0.2ex\hbox{$#2$}}
+\newcommand{\dnk}[3]{\lower 0.2ex\hbox{$#1$}\kern -.1em{\setminus}
+                     \kern -.1em\raise 0.2ex\hbox{$#2$}
+                     \kern -.1em{/}\kern -.1em\lower 0.2ex\hbox{$#3$}}
+\newcommand{\lnk}[2]{\raise 0.2ex\hbox{$#1$}
+                     \kern -.1em{/}\kern -.1em\lower 0.2ex\hbox{$#2$}}
+%\newcommand{\anfst}[2]{{\mathop{\underleftarrow{\:#1}}\limits_{#2}}}
+\newcommand{\anfst}[2]{{\mathop{\smash[b]{\underleftarrow{\:%
+{\setbox0=\hbox{$#1$}\raise\dp0\box0}}}}\limits_{#2}}}
+\newcommand{\combset}[2]{\underline{\underline{\binom{#1}{#2}}}}
+
+\newcommand{\blopro}[3]{{#1_{#2}^{#3}}}
+
+\newcommand{\dm}[1]{{\mbox{d}}#1}
+\newcommand{\ddx}[1]{\frac{\mbox{d}}{\mbox{d}#1}}
+
+
+% special symbols
+        
+\def\elhade#1#2#3#4#5{\mathbin{#1 \hbox to #2{}\hbox{\vrule
+  \@width #3 \@height #4 \@depth #5}\hbox to .2em{}} }
+  
+\def\erhade#1#2#3#4#5{\mathbin{\hbox to .3em{}\hbox{\vrule
+  \@width #2 \@height #3 \@depth #4}\hbox to #5{}#1} }
+
+\def\mksemidir#1#2#3#4{\mathbin{\hbox to .2em{}\hbox{\vrule
+  \@width #1\@height #2\@depth #3}\hbox to #4{}\times}}
+
+\def\mkdirsemi#1#2#3#4{\mathbin{\times\hbox to #4{}\hbox{\vrule
+  \@width #1\@height #2\@depth #3}\hbox to .2em{} }}
+  
+\def\semidir{\mathchoice{\mksemidir{.050em}{.50em}{.00em}{-.18em}} %display
+                        {\mksemidir{.050em}{.50em}{.00em}{-.18em}} %text
+                        {\mksemidir{.043em}{.37em}{.00em}{-.10em}} %script
+                        {\mksemidir{.030em}{.32em}{.00em}{-.12em}}%scriptscript
+         }
+         
+\def\dirsemi{\mathchoice{\mkdirsemi{.050em}{.50em}{.00em}{-.22em}} %display
+                        {\mkdirsemi{.050em}{.50em}{.00em}{-.22em}} %text
+                        {\mkdirsemi{.043em}{.35em}{.01em}{-.17em}} %script
+                        {\mkdirsemi{.030em}{.32em}{.00em}{-.17em}} %scriptscript
+         }
+
+\renewcommand\lhd{\vartriangleleft}
+\renewcommand\rhd{\vartriangleright}
+%\newcommand\bigtimes{\mathop{\times}\limits}
+\newcommand\subdir{\setbox0=\hbox{$\smallfrown$}%
+\vfuzz=10pt\hfuzz=10pt%
+\mathop{\displaystyle\smash{\raise 0.3\ht0\hbox{\hbox to \wd0%
+{\hfil\vrule height4pt width0.4pt\hfil}\kern-\wd0%
+\lower\ht0\box0}}}\limits}
+

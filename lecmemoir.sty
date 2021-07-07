@@ -1,0 +1,149 @@
+\long\def\thechapter{\Roman{chapter}}
+\long\def\thesection{\thechapter.\arabic{section}}
+
+% mark also subsubsections
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\newcommand\pe{\par\noindent}
+
+\newcommand\nabs{\noindent\subsection{}}
+
+\newcommand\myparagraph[1]{\noindent\underline{\textit{#1}:}}
+
+\newcommand\attribution[1]{
+\begin{raggedleft}
+{\tiny #1}\\
+\end{raggedleft}
+}
+
+%\newcounter{nabsect}[section]
+%\renewcommand\thenabsect    {\thesection.\arabic{nabsect}}
+%\def\nabsect{\@startsection{nabsect}{2}%
+%  \normalparindent{.5\linespacing\@plus.7\linespacing}{-.5em}%
+%  {\normalfont\bfseries}}
+\newcounter{nabsect}
+\renewcommand\thenabsect{\arabic{nabsect}}
+
+%\def\nabs{\par\@tempskipa.5\linespacing\@plus.7\linespacing\relax%
+%\addpenalty\@secpenalty\addvspace\@tempskipa%
+%\noindent\refstepcounter{nabsect}\kern-.5em%
+%{\normalfont\bfseries\thenabsect}\kern.5em}
+
+\newcommand\defini[1]{\textit{#1}\index{#1}}
+\newcommand\fer[1]{(\ref{#1})}
+\newcommand\seite[1]{,\,\pageref{#1}}
+
+\newtheoremstyle{mythm}{5pt}{5pt}%
+{\normalfont}{0pt}{\scshape}{:}{ }%
+{\thmname{#1} \thmnumber{#2}\thmnote{ {\normalfont (#3)}}}
+
+\newtheoremstyle{mybem}{5pt}{5pt}%
+{\normalfont}{0pt}{\scshape}{:}{ }%
+{\thmname{#1} \thmnumber{#2}\thmnote{ {\normalfont (#3)}}}
+
+\newtheoremstyle{algosty}{5pt}{5pt}%
+{\sffamily}{0pt}{\scshape}{:}{ }%
+{\thmname{#1} \thmnumber{#2}\thmnote{ {\normalfont (#3)}}}
+
+%\swapnumbers
+\theoremstyle{mythm}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{vermutung}[equation]{Vermutung}
+\newtheorem{defn}[equation]{Definition}
+\theoremstyle{mybem}
+\newtheorem{note}[equation]{Note}
+\newtheorem{bsp}[equation]{Example}
+\newtheorem{perf}[equation]{Performance}
+\theoremstyle{algosty}
+\newtheorem{algo}[equation]{Algorithm}
+
+%\newenvironment{bew}{\noindent\underline{Beweis:}}{\qed\medskip\\\noindent}
+\renewenvironment{proof}{\noindent\underline{Proof:}}{\qed\medskip\\\noindent}
+\newenvironment{tryout}{\noindent\underline{Example:}}{}
+
+% for alternate text
+\def\anngraphics#1#2#3{%
+\BeginAccSupp{Alt={#3},method=escape}
+\includegraphics[width=#1]{#2}\EndAccSupp{}}
+
+\def\alginvar#1{{\em (#1)}}
+
+\def\multilimits@{\bgroup
+  \Let@
+  \restore@math@cr
+  \default@tag
+ \baselineskip\fontdimen10 \scriptfont\tw@
+ \advance\baselineskip\fontdimen12 \scriptfont\tw@
+ \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+ \lineskiplimit\lineskip
+ \vbox\bgroup\ialign\bgroup\hfil$\m@th\scriptstyle{##}$\hfil\crcr}
+\def\Sb{_\multilimits@}
+\def\Sp{^\multilimits@}
+\def\endSb{\crcr\egroup\egroup\egroup}
+\let\endSp=\endSb
+
+%\let\dieseite=\thepage
+%\def\thepage{\oldstylenums{\dieseite}}
+%\def\figurename{Bild}
+%\def\contentsname{Inhalt}
+
+% allow figures 'here'
+\renewcommand{\fps@figure}{htbp}
+\renewcommand{\fps@table}{htbp}
+
+\hfuzz=1pt
+\lefthyphenmin=2 \righthyphenmin=2
+\frenchspacing
+
+% larger subscripts in math fonts
+\DeclareMathSizes{\@xpt}{\@xpt}{7}{5}
+\DeclareMathSizes{\@xipt}{\@xipt}{9}{7}
+\DeclareMathSizes{\@xiipt}{\@xiipt}{9}{7}
+\DeclareMathSizes{\@xivpt}{\@xivpt}{\@xpt}{8}
+
+
+\newsavebox{\ChpNumBox}
+%\definecolor{ChapBlue}{rgb}{0.00,0.65,0.65}
+\definecolor{ChapBlue}{rgb}{0.07,0.41,0.31}
+\makeatletter
+\newcommand*{\thickhrulefill}{%
+\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
+\newcommand*\BuildChpNum[2]{%
+\begin{tabular}[t]{@{}c@{}}
+\makebox[0pt][c]{#1\strut} \\[.5ex]
+\colorbox{ChapBlue}{%
+\rule[10em]{
+0pt}{0pt}%
+\rule{1ex}{0pt}\color{black}#2\strut
+\rule{1ex}{0pt}}%
+\end{tabular}}
+\makechapterstyle{BlueBox}{%
+\renewcommand{\chapnamefont}{\large\scshape}
+\renewcommand{\chapnumfont}{\Huge\bfseries}
+\renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+\setlength{\beforechapskip}{20pt}
+\setlength{\midchapskip}{26pt}
+\setlength{\afterchapskip}{40pt}
+\renewcommand{\printchaptername}{}
+\renewcommand{\chapternamenum}{}
+\renewcommand{\printchapternum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\@chapapp}%
+{\color{white}\chapnumfont\thechapter}}}
+\renewcommand{\printchapternonum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+{\chapnumfont\hphantom{\thechapter}}}}
+\renewcommand{\afterchapternum}{}
+\renewcommand{\printchaptertitle}[1]{%
+\usebox{\ChpNumBox}\hfill
+\parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
+\vspace{\midchapskip}%
+\thickhrulefill\par
+\chaptitlefont ##1\par}}%
+}
+

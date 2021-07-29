@@ -160,7 +160,7 @@ When talking abouts sets being subsets of others, this is also called
 Some authors distinguish between {\em subset, could be equal} (symbol
 $\subseteq$) and {\em proper subset, not equal} ($\subset$). We do not do
 this and will state explicitly ($\subsetneqq$) if a subset is 
-proper (that is not equal).
+proper (that is, not equal).
 \end{note}
 
 To provide for examples in this section, let 
@@ -206,7 +206,7 @@ A=\{1,5,\{2,3\}\}
 \]
 then $1\in A$ and $\{2,3\}\in A$. Or consider
 \[
-B=\{\subset\{1,2,3\}\mid \sz{S}=2\}=\{\{1,2\},\{1,3\},\{2,3,\}\}.
+B=\{S\subset\{1,2,3\}\mid \sz{S}=2\}=\{\{1,2\},\{1,3\},\{2,3,\}\}.
 \]
 In such situations, the wrapping level is important: 
 Being in a subset contained in another set is not the same as being an
@@ -413,12 +413,12 @@ a) $(A\cup B)^\mycomplement=A^\mycomplement\cap B^\mycomplement$.\\
 b) $(A\cap B)^\mycomplement=A^\mycomplement\cup B^\mycomplement$.
 \end{thm}
 \begin{proof}
-Again, to show equality of sets, we to show inclusion in two directions:
+Again, to show equality of sets, we need to show inclusion in two directions:
 a) Let $x\in (A\cup B)^\mycomplement$. That means that $x\in U$ but $x\not\in
 A\cup B$. But that means that $x$ can be neither in $A$, nor in $B$, so
 $x\in A^\mycomplement$ and $x\in B^\mycomplement$ and thus $x\in
 A^\mycomplement\cap B^\mycomplement$.
-Vice versa, let $x\in A^\mycomplement\cap B^\mycomplement$.
+Conversely, let $x\in A^\mycomplement\cap B^\mycomplement$.
 That means that $x\in U$ but $x\not\in A$ and
 $x\not\in B$, and thus $x\not\in A\cup B$. This implies that
 $x\in(A\cup B)^\mycomplement$.\\
@@ -552,9 +552,9 @@ $\forall x\in E\exists y\in E:y>x$.
 
 Note that the order, in which we write the quantifiers of different type is important, and
 that changing the ordering will change the meaning of the statement: For
-example $\forall x\in\Z\exists y\in Z: y=x+1$ ({\em for every integer there
+example $\forall x\in\Z\exists y\in \Z: y=x+1$ ({\em for every integer there
 exists one that is larger by one}, clearly a true statement) versus $\exists
-y\in Z\forall x\in\Z: y=x+1$ ({\em there is an integer ($y$) that is one
+y\in \Z\forall x\in\Z: y=x+1$ ({\em there is an integer ($y$) that is one
 larger than every other integer}, a nonsensical claim).
 (Adjacent quantifiers of the same type can be exchanged.)
 \medskip
@@ -601,7 +601,7 @@ shows that $x$ also satisfies the predicate $Q$.
 
 \section{Pairs, Tuples, Cartesian Product}
 
-In general, we store items not all things in big bags that get everything thrown in
+In general, we store items, not all things, in big bags that get everything thrown in
 together, but in more structured form. The same is true in mathematics,
 where we will often find it convenient to have objects stored in a form with
 more structure than a set. This section describes some of the ways how this
@@ -611,7 +611,7 @@ We start with the definition of pairs: A \defini{pair} is an object $(a,b)$,
 that holds two objects (namely $a$ and $b$) in two distinct positions,
 enclosed by parentheses (or sometimes brackets: $[a,b]$). The
 pair $(1,2)$ is different from the pair $(2,1)$, while the sets $\{1,2\}$
-and $\{2,1\}$ are the same. (Note that pairs and tuples formally are
+and $\{2,1\}$ are the same. (Note that sets and tuples formally are
 different: $\{1,2\}\not=(1,2)$.)
 
 Formally, we can construct pairs as sets. We simply define $(a,b)$ as a

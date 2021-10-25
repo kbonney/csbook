@@ -760,6 +760,7 @@ of $A$ are in correspondence to bit-lists of length $n$. This is acheived by
 assigning the elements of $A$ to the numbers $1$ through $n$, and associating
 a subset $S$ to the bit list with $i$th entry equal to $1$ if the element
 associated to $i$ is in $S$ and equal to $0$ otherwise.
+\smallskip
 
 In this way, to create a program which generates all subsets of
 $A$, we can just assign to the elements of $A$ the numbers $1$ through $n$ and
@@ -777,18 +778,21 @@ the follow program gives bit-lists representing $A$'s subsets:
 	\end{verbatim}
 Keep in mind that for this to be useful, we need to have bijection between
 $A$ and $\{1,\ldots,n\}$ so that a bit-list properly represents a subset. Take
-$A=\{\text{dog},\text{bird},\text{cat}\}$ and define the bijection $f:A\rightarrow \{1,2,3\}$ by
-$f(\text{dog})=1$, $f(\text{bird})=2$ and $f(\text{cat})=3$. When we run subsets() we get
-the eight bit-lists 
+$A=\{\text{dog},\text{bird},\text{cat}\}$ and define the bijection $f:A\rightarrow 
+\{1,2,3\}$ by
+$f(\text{dog})=1$, $f(\text{bird})=2$ and $f(\text{cat})=3$. When we run subsets() we 
+get the eight bit-lists 
 	\[
 	(0,0,0),\ (0,0,1),\ (0,1,0),\ (0,1,1),\ (1,0,0),\ (1,0,1),\ (1,1,0),\ (1,1,1).
 	\]
-	To see which subsets of $A$ these
+	
+To see which subsets of $A$ these
 correspond to, we use $f$ to view the elements of $A$ as positions in the bit-list.
 In our case, dog would correspond to the first position of the bit-list,
 bird to the second, and
 cat to the third. We translate a bit-list to a subset by including an element in the
 subset if its corresponding position has a 1 in it, and leaving it out if it is a 0. 
+\smallskip
 
 In this way, we have the following correspondence between some
 of the bit-lists and subsets:

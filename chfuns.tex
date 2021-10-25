@@ -550,6 +550,66 @@ $A$ could have different images.
 Note that this lemma is false if the sets are infinite. The functions $f_3$ and $f_4$ in
 Figure~\ref{figoneontofcts} are counterexamples.
 
+\subsection{Algorithms as Functions}
+
+Given a computer algorithm, it is perfectly reasonable
+to attempt to view it as a mathematical function. For
+example, consider the algorithm which takes as input a natural number $n$, and outputs
+the first letter of $n^2$ written in English words. In pseudocode:
+
+	\begin{verbatim}
+	define: func(n)
+	input: a number n
+	output: a letter of the English alphabet
+	procedure:
+	n = n*n \\ square the input
+	n = toWords(n) \\ write n in English words
+	n = firstLetter(n) \\ choose the first letter of n
+	return n
+	\end{verbatim}
+	
+For $func(n)$ to truly describe a function, we must assume some unique naming convention for numbers in this program to guarantee that
+the function has a well-defined value for each n. 
+That is, we need the subroutine $toWords(n)$ to have a determined output for
+all $n$. When this is the case, our algorithm defines a 
+proper mathematical function $func: \mathbb{N} \rightarrow \mathcal{A}$ where $\mathcal{A}$
+is the set of English letters. For example, to calculate $func(9)$ we square 9 to 81, write 81 as \textit{eighty-one}, and finally return the first letter \textit{e} as our output: $func(9)=e$.
+
+We can ask if a function defined algorithmically is onto or one-to-one just as we did for
+functions defined in typical
+mathematical fashion. It is not immediately clear how to evaluate these two
+qualities for $func(n)$. With some experimentation, one can eventually find a 
+counter-example to one-to-one. Consider $f(15)$ and $f(17)$. The reader
+can verify
+that, when using any reasonable implementation of $toWords(n)$, both of these outputs are the letter $t$, so $func(n)$ is certainly not one-to-one.
+
+The harder question is that of onto. For each
+letter $X$ of the English alphabet, can we find an $n$ so that the first letter of
+its square is $X$? This depends on your naming convention. We could contrive a naming convention that forces the function to be
+onto. For example, we could require that 1 be written as ``aone", $2^2 = 4$ be written
+as ``bfour," and so on for the first 26 square numbers. In this case, $func(n)$ would
+be onto. However, other naming conventions might give versions of $func(n)$ which are 
+not onto.
+
+Let's look at an example of an algorithm that cannot be viewed as a mathematical
+function.
+
+	\begin{verbatim}
+	define: notafunc(n)
+	input: a positive integer n
+	output: a random number between 1 and n
+	procedure:
+	1. r = randomInteger(1,n) \\ choose a random integer r between 1 and n
+	2. return r
+	\end{verbatim}
+
+A key difference between $func(n)$ and $notafunc(n)$ is the introduction
+of randomness in the former. This causes $notafunc(n)$ to not have a well-defined
+output. For example, $notafunc(3)$ could take on the values $1,2,$ or $3$ depending
+on the result of calling $randomInteger(1,3)$. In general, as long as an algorithm
+does not utilize any randomness, we can think of it as a mathematical function and
+ask whether it is onto or one-to-one.
+
 \section{Bijections and Inverse Functions}
 
 A function $f\colon A\to B$ that is both one-to-one and onto is called
